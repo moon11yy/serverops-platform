@@ -1,0 +1,8 @@
+flowchart LR
+    U[Operator / future dashboard] --> API[FastAPI API]
+    U --> C[Collector API]
+    C -->|Read inventory/current state| API
+    C -->|Read Redfish| R[Redfish Simulator]
+    C -->|Raw + normalized observation| API
+    API --> P[(PostgreSQL)]
+    API --> M[(MongoDB)]
